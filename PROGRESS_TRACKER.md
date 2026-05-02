@@ -3,7 +3,7 @@
 This document serves as your high-level dashboard. Use it to check off days as you complete them. Seeing your progress visually will help keep you motivated and ensure you don't miss any critical topics!
 
 ## Week 1: Bash Scripting (20 hours)
-- [] **Day 1-2**: Fundamentals (Variables, Data types, Echo, read)
+- [ ] **Day 1-2**: Fundamentals (Variables, Data types, Echo, read)
 - [ ] **Day 3-4**: Loops and Conditionals (for/while loops, if/else)
 - [ ] **Day 5-6**: Functions and Error Handling (exit codes, set -e)
 - [ ] **Day 7**: Practice & Review (Write 3 complete scripts from scratch)
