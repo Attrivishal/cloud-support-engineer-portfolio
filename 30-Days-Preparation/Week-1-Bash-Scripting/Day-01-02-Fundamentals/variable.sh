@@ -13,5 +13,5 @@ Course="BCA"
 echo "My name is $Name, I am $age years old , and I am currently pursuing $Course from $University , thank you for asking :)"
 
 #why we exactly use variable in production environment?
-
 #1. Reusability: Variables allow you to reuse values throughout your script without hardcoding them multiple times. This makes your code more efficient and easier to maintain.
+
