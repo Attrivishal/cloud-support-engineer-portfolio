@@ -63,4 +63,4 @@
 ## ✅ Action Items
 - [x] Understand what Bash and Scripts are from the ground up.
 - [x] Understand the difference between creating a variable and using it with `$`.
-- [ ] Practice writing a script with variables and running it in the terminal.
+- [x] Practice writing a script with variables and running it in the terminal.
