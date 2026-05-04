@@ -82,3 +82,4 @@ echo "The length of $name is: $length"
 read -p "Enter the number:" num 
 double=$((num * 2))
 echo "Double of $num is $double"
+
