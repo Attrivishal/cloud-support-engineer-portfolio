@@ -41,11 +41,48 @@
   - `$1` contains the first word: "apple"
   - `$2` contains the second word: "banana"
 
-#### Step E: Did it work? (The `$?` variable)
-- Every time a command finishes, it silently leaves behind a number.
-- `0` means it worked perfectly.
-- Any other number (1, 2, etc.) means there was an error.
-- **Why use it?** You check the `$?` variable to see if your last command was successful before moving on to the next one. This is how scripts know to stop if something goes wrong.
+#### Step E: Exit Codes (`$?` variable)
+- **What is it?** Every command in Linux/Mac returns a hidden number when it finishes running, called an "Exit Code".
+- **The Rule:** 
+  - `0` means the command was **Successful**.
+  - `1-255` means there was an **Error** (each number means a different type of error, but any non-zero is a failure).
+- **Why use it?** As a Cloud Engineer, you can't just assume a command worked. You check the `$?` variable to verify success before moving on to the next step.
+
+*Example (Checking if a package installation was successful):*
+```bash
+brew install htop
+if [ $? -eq 0 ]; then 
+    echo "Success: htop installed correctly."
+else
+    echo "Error: Failed to install htop."
+fi
+```
+
+### 4. Making Decisions (If-Else)
+Scripts usually run straight down from top to bottom. `if-else` statements allow your script to make a decision and change its path based on conditions.
+- **Syntax rules:** In Bash, `if` statements use square brackets `[ ]` for the condition and end with `fi` (which is just 'if' backwards!).
+- **Why use it?** As a Cloud Engineer, you must check if things exist before you use them. For example, if you try to read a config file that isn't there, the script will crash.
+- **Top 6 Cloud Shortcuts (Test Operators):**
+  Instead of memorizing all 30 operators, just remember these 6. They cover 90% of what you'll write in scripts.
+  
+  | Operator | What it checks | Example | Memory Trick |
+  | :--- | :--- | :--- | :--- |
+  | `-eq` | Numbers are **Eq**ual | `[ $cpu -eq 80 ]` | **Eq**ual |
+  | `-ne` | Numbers are **N**ot **E**qual | `[ $status -ne 200 ]` | **N**ot **E**qual |
+  | `-f` | Is it a **F**ile? | `[ -f "config.txt" ]` | **F**ile |
+  | `-d` | Is it a **D**irectory? | `[ -d "/var/log" ]` | **D**irectory |
+  | `-z` | Is the string empty? | `[ -z "$name" ]` | **Z**ero length |
+  | `-n` | Is the string NOT empty?| `[ -n "$name" ]` | **N**on-zero |
+
+*Example (Checking if a file exists before reading it):*
+```bash
+if [ -f "server_config.txt" ]; then
+    echo "File found! Reading configurations..."
+else
+    echo "Error: File is missing!"
+fi
+```
+
 
 ## 🛠 Hands-on / Practical 
 *My First Script Checklist:*
