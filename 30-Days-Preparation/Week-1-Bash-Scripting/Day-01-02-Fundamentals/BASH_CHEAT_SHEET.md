@@ -110,3 +110,24 @@ echo "${#servers[@]}"    # Get total count (3)
 
 servers+=("cache01")     # Add an item
 ```
+
+---
+
+## 🚦 7. Exit Codes (`$?`)
+
+Every command returns a hidden number when it finishes:
+- `0` = **Success**
+- `1-255` = **Error**
+
+Always check `$?` immediately after a critical command (like `mkdir`, `cp`, `brew install`) to ensure it worked.
+
+```bash
+# Example: Checking if a package installed correctly
+brew install htop &> /dev/null
+
+if [ $? -eq 0 ]; then
+    echo "✅ htop installed successfully!"
+else
+    echo "❌ Failed to install htop."
+fi
+```
