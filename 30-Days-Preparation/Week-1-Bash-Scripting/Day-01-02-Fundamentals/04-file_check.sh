@@ -57,3 +57,5 @@ then
 else
     echo "Your mac does not have internet access to $website."
 fi
+
+
