@@ -88,7 +88,7 @@ echo "Checking if the service is up or not ..."
 
 while ! curl https://google.com &>/dev/null;
 do
-      echo "Service is not reachable yet. checking again in 3 seconds..."
+      echo "Service is not reac hable yet. checking again in 3 seconds..."
       sleep 3
 done 
 echo "Service is up!"
@@ -130,7 +130,9 @@ done
 echo "Time's up!"
 
 #Ask user for a username. Keep asking until they enter only letters and numbers (no spaces, no special characters). Use regex ^[a-zA-Z0-9]+$.
+
 read -p "Enter the username:" username
+
 
 while [[ ! $username =~ ^[a-zA-Z0-9]+$ ]]
 do 
