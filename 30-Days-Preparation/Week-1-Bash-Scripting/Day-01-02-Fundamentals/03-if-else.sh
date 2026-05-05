@@ -36,3 +36,27 @@ then
 else
     echo "The file $filename does not exist."
 fi  
+
+
+
+
+#read from user and check if the region is valid or not
+read -p "Enter the region you want to choose:" region 
+if echo "$valid_region" | grep -w "$region" ;
+then 
+     echo "Valid $region found!"
+else
+      echo "Invalid region. Please try again."
+fi
+
+
+#Ask user for input and check if it's empty or not
+read -p "Enter something:" input
+
+if [ -z "$input" ]
+then 
+   echo "Input is empty. Please enter something."
+else
+   echo "You entered: $input"
+fi
+
