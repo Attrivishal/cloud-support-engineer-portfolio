@@ -41,6 +41,3 @@ else
         apt-get update && apt-get install -y "$service"
     fi
 fi
-
-
-
