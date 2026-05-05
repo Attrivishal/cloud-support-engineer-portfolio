@@ -75,4 +75,3 @@ When working with strings in Bash, these flags are essential for validating inpu
 - [x] Review fundamentals from Day 01-02.
 - [ ] Complete the "System Menu" script.
 - [ ] Practice nested loops (loop inside a loop).
-
