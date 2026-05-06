@@ -25,19 +25,33 @@ do
    fi
 done
 
+
 #Restart service if it crashes if not installed then install it.
-service="nginx"
-if systemctl is-active --quiet "$service";
-then 
-    echo "$service is running"
-else 
-    echo "$service is not running"
-    if systemctl list-unit-files | grep -q "$service.service";
-    then 
-        echo "Restarting $service..."
-        systemctl restart "$service"
-    else 
-        echo "$service is not installed. Installing $service..."
-        apt-get update && apt-get install -y "$service"
-    fi
-fi
+# service="nginx"
+# if systemctl is-active --quiet "$service";
+# then 
+#     echo "$service is running"
+# else 
+#     echo "$service is not running"
+#     if systemctl list-unit-files | grep -q "$service.service";
+#     then 
+#         echo "Restarting $service..."
+#         systemctl restart "$service"
+#     else 
+#         echo "$service is not installed. Installing $service..."
+#         apt-get update && apt-get install -y "$service"
+#     fi
+# fi
+
+
+#sum number 1 to n 
+
+read -p "enter a number:" n
+sum=0
+for ((i=1; i<=n; i++));
+do 
+    sum=$((sum + i))
+done
+
+echo "the sum of the number is: $sum"
+
