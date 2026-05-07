@@ -96,9 +96,7 @@ echo "Service is up!"
 
 #Ask user for cloud region until valid
 valid_region="us-east-1 us-west-2 eu-west-1 ap-southeast-1"
-
 #read from user
-
 read -p "Enter the region you want to choose:" region 
 if echo "$valid_region" | grep -w "$region" ;
 then 
@@ -107,8 +105,9 @@ else
       echo "Invalid region. Please try again."
 fi
 
-read -p "Enter something:" input
 
+#Ask user for input until they provide a non-empty string. If the input is empty, print "Input is empty. Please enter something." and ask again.
+read -p "Enter something:" input
 if [ -z "$input" ]
 then 
    echo "Input is empty. Please enter something."
@@ -130,7 +129,6 @@ done
 echo "Time's up!"
 
 #Ask user for a username. Keep asking until they enter only letters and numbers (no spaces, no special characters). Use regex ^[a-zA-Z0-9]+$.
-
 read -p "Enter the username:" username
 
 
