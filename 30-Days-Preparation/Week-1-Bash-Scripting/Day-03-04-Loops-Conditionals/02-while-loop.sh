@@ -29,36 +29,36 @@
 
 #if file exists
 
-# while [ -f "myfile.txt" ]
-# do 
-#    echo "file exists"
-#    sleep 1  
-# done
-# echo "file does not exist"
+while [ -f "myfile.txt" ]
+do 
+   echo "file exists"
+   sleep 1  
+done
+echo "file does not exist"
 
 #coutdown from 10 to 1
-# counter=10
-# while [ $counter -gt 0 ]
-# do 
-#    echo $counter
-#    counter=$((counter-1))
-#    sleep 1
-# done
-# echo "BOOOOOOOMMMMMMMM!!!!!!!!->>>>Blast off!"
+counter=10
+while [ $counter -gt 0 ]
+do 
+   echo $counter
+   counter=$((counter-1))
+   sleep 1
+done
+echo "BOOOOOOOMMMMMMMM!!!!!!!!->>>>Blast off!"
 
 #print even and odd number from 2 to 50 
-# counter=2
-# while [ $counter -le 50 ]
-# do 
-#    if [ $((counter % 2)) -eq 0 ]
-#    then
-#       echo "$counter is even"
-#    else
-#       echo "$counter is odd"
-#    fi
-#    counter=$((counter+1))
-#    sleep 0.5
-# done
+counter=2
+while [ $counter -le 50 ]
+do 
+   if [ $((counter % 2)) -eq 0 ]
+   then
+      echo "$counter is even"
+   else
+      echo "$counter is odd"
+   fi
+   counter=$((counter+1))
+   sleep 0.5
+done
 
 #Question: Write a while loop that keeps asking "Are you ready?" until the user types "yes".
 
