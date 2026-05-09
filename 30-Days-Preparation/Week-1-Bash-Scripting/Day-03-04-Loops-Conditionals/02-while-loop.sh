@@ -18,14 +18,14 @@
 
 
 # Infinite loop
-# counter=1
-# while true;
-# do
-#    echo $"running $counter time"
-#    echo "Press [CTRL+C] to stop.."
-#    counter=$((counter+1))
-#    sleep 1
-# done
+counter=1
+while true;
+do
+   echo $"running $counter time"
+   echo "Press [CTRL+C] to stop.."
+   counter=$((counter+1))
+   sleep 1
+done
 
 #if file exists
 
