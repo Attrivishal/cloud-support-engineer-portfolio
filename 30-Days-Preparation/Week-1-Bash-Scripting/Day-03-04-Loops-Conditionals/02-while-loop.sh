@@ -6,14 +6,13 @@
       # done
 
 # Example: print numbers from 1 to 5 using while loop
-# myvar=1
+myvar=1
 
-# while [ $myvar -le 5 ]
-# do 
-#    echo $myvar
-#    myvar=$(($myvar + 1))
-  
-# done
+while [ $myvar -le 5 ]
+do 
+   echo $myvar
+   myvar=$(($myvar + 1))
+done
 
 
 
@@ -72,14 +71,14 @@ echo "Great! Let's get started!"
 
 #Question: Write a script that waits for a file called /tmp/cloud_ready.txt to appear. Check every 2 seconds. When found, print "Cloud resources are ready!"
 
-# echo "Wait for cloud resource to be ready..."
+echo "Wait for cloud resource to be ready..."
 
-# while [ ! -f "/tmp/cloud_ready.txt" ]
-# do 
-#    echo "checking for cloud_ready.txt..."
-#    sleep 2
-# done
-# echo "Cloud resources are ready!"   
+while [ ! -f "/tmp/cloud_ready.txt" ]
+do 
+   echo "checking for cloud_ready.txt..."
+   sleep 2
+done
+echo "Cloud resources are ready!"   
 
 
 #Question: Keep checking if https://example.com is reachable (use curl). Check every 3 seconds. Once reachable, print "Service is up!".
