@@ -131,6 +131,7 @@ echo "Time's up!"
 read -p "Enter the username:" username
 
 
+
 while [[ ! $username =~ ^[a-zA-Z0-9]+$ ]]
 do 
       echo "Invalid username should contain only letters and numbers. Please try again."
