@@ -129,13 +129,9 @@ echo "Time's up!"
 
 #Ask user for a username. Keep asking until they enter only letters and numbers (no spaces, no special characters). Use regex ^[a-zA-Z0-9]+$.
 read -p "Enter the username:" username
-
-
-
 while [[ ! $username =~ ^[a-zA-Z0-9]+$ ]]
 do 
       echo "Invalid username should contain only letters and numbers. Please try again."
       read -p "Enter the username:" username
 done
 echo "Valid username: $username" 
-
