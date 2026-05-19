@@ -21,10 +21,48 @@ Functions help modularize code, making it reusable, readable, and easier to main
   }
   ```
 - **Local Variables**: Use the `local` keyword inside functions to prevent variable scoping issues (`local my_var="value"`).
-- **Arguments**: Accessed using `$1`, `$2`, etc., just like script arguments, but they are local to the function.
-- **Return Values**:
-  - `return <status_code>`: Returns an exit status (0-255). 0 means success.
-  - `echo "value"`: To return a string or data, you `echo` it and capture it via command substitution (`result=$(my_function)`).
+- **Passing Multiple Arguments**: 
+  You pass arguments to a function just like you do to a script—separated by spaces. Inside the function, you access them using `$1` for the first argument, `$2` for the second, and so on. The special variable `$@` represents all arguments passed.
+  ```bash
+  create_user() {
+      local username="$1"
+      local role="$2"
+      echo "Creating user $username with role $role"
+  }
+  
+  # Calling the function with two arguments
+  create_user "john_doe" "admin"
+  ```
+- **3 Ways to "Return" a Value from a Function**:
+  Unlike Python or JavaScript, Bash functions do not return strings or objects directly. You have 3 main methods to get data back:
+  1. **Using `return` (For Success/Failure Codes ONLY)**:
+     You can only return an integer between `0` and `255`. By convention, `0` is success, and anything else is an error. You capture it using the `$?` variable immediately after the function call.
+     ```bash
+     is_admin() { return 0; } # 0 means true/success
+     is_admin
+     echo "Exit code: $?" 
+     ```
+  2. **Using `echo` and Command Substitution (For Strings/Data)**:
+     This is the standard way to return actual text or data. You `echo` the result inside the function, and capture the function call in a variable using `$()`.
+     ```bash
+     get_greeting() {
+         local name="$1"
+         echo "Hello, $name!" # This is "returned"
+     }
+     # Capturing the echoed output into a variable
+     my_greeting=$(get_greeting "Alice")
+     echo "$my_greeting"
+     ```
+  3. **Modifying a Global Variable (For State Changes)**:
+     Variables in Bash are global by default. If you don't use the `local` keyword, changing a variable inside a function changes it everywhere.
+     ```bash
+     FINAL_RESULT=""
+     calculate_sum() {
+         FINAL_RESULT=$(($1 + $2))
+     }
+     calculate_sum 5 10
+     echo "The sum is: $FINAL_RESULT"
+     ```
 
 ### 2. Error Handling
 Robust scripts anticipate failures and handle them gracefully.
