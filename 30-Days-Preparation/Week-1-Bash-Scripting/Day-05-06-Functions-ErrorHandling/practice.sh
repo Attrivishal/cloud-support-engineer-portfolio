@@ -33,13 +33,13 @@ greet_person "Vishal Attri"
 greet_person "Khushi"
 
 #checking disk usage and free memory
-mem_usage() {
-    usage=$(du -sh / | awk 'NR==2  {print $5}' | sed 's/%//')
-    echo "$usage"
-}
+# mem_usage() {
+#     usage=$(du -sh / | awk 'NR==2  {print $5}' | sed 's/%//')
+#     echo "$usage"
+# }
 
-mem_usages=$(mem_usage)
-echo "Your disk is: $(mem_usages)% full"
+# mem_usages=$(mem_usage)
+# echo "Your disk is: $(mem_usages)% full"
 
 
 #check the number if even or odd if even return 0 else return 1
@@ -59,5 +59,5 @@ else
     echo "Number is odd"
 fi
 
-
 # get file size
+ if command -v 
