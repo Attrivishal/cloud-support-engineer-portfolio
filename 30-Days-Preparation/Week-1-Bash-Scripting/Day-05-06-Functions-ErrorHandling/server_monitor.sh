@@ -37,7 +37,7 @@ log_error() {
 # Function to print info messages
 log_info() {
     local msg="$1"
-    echo -e "✅ [INFO] $msg"
+    echo -e " [INFO] $msg"
 }
 
 # Function simulating a server health check
