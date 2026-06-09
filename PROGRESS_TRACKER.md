@@ -9,7 +9,7 @@ This document serves as your high-level dashboard. Use it to check off days as y
 - [ ] **Day 7**: Practice & Review (Write 3 complete scripts from scratch)
 
 ## Week 2: AWS Services Deep Dive (25 hours)
-- [ ] **Day 8-9**: EC2 Mastery (Instances, Security Groups, EBS)
+- [x] **Day 8-9**: EC2 Mastery (Instances, Security Groups, EBS)
 - [ ] **Day 10-11**: RDS Database Management (Creation, Backups, Troubleshooting)
 - [ ] **Day 12-13**: VPC and Networking (Subnets, Route Tables, NAT, IGW)
 - [ ] **Day 14**: S3 and IAM (Bucket policies, Roles, Permissions evaluation)
